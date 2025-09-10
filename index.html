@@ -1,12 +1,70 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="https://www.gstatic.com/images/branding/product/1x/gemini_32dp.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Industrial Production Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        --bg-primary: #f8fafc;
+        --bg-secondary: #ffffff;
+        --bg-muted: #f1f5f9;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --border-primary: #e2e8f0;
+        --border-secondary: #cbd5e1;
+        --ring-color: #06b6d4;
+      }
+      html.dark {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-muted: #334155;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --border-primary: #334155;
+        --border-secondary: #475569;
+        --ring-color: #06b6d4;
+      }
+      html.classic {
+        --bg-primary: #d4d0c8;
+        --bg-secondary: #c0c0c0;
+        --bg-muted: #aca899;
+        --text-primary: #000000;
+        --text-secondary: #000000;
+        --text-muted: #000000;
+        --border-primary: #808080;
+        --border-secondary: #404040;
+        --ring-color: #0000ff;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+      }
+      .themed-bg-secondary { background-color: var(--bg-secondary); }
+      .themed-text-primary { color: var(--text-primary); }
+      .themed-text-secondary { color: var(--text-secondary); }
+      .themed-border-primary { border-color: var(--border-primary); }
+    </style>
   <script type="importmap">
 {
   "imports": {
@@ -19,7 +77,7 @@
 }
 </script>
 </head>
-  <body class="bg-gray-900">
+  <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

@@ -1,5 +1,5 @@
 {
-  "name": "Industrial Production Analyzer",
-  "description": "An advanced analytics dashboard to upload, visualize, and analyze industrial production log data. It provides insights into production events, downtimes, and employee performance, featuring AI-powered analysis with Gemini.",
+  "name": "AI-Powered Production Analyzer",
+  "description": "An advanced analytics dashboard with a themeable UI to upload, visualize, and analyze industrial production log data. It provides deep insights into production events, downtimes, and employee performance, featuring automated and on-demand analysis with the Gemini API.",
   "requestFramePermissions": []
 }

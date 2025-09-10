@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 
 const API_KEY = process.env.API_KEY;
@@ -19,5 +18,22 @@ export async function getProductionAnalysis(prompt: string): Promise<string> {
   } catch (error) {
     console.error("Error calling Gemini API:", error);
     throw new Error("The AI analysis request failed. Please check your API key and network connection.");
+  }
+}
+
+
+export async function* getProductionAnalysisStream(prompt: string): AsyncGenerator<string, void, undefined> {
+  try {
+    const response = await ai.models.generateContentStream({
+       model: "gemini-2.5-flash",
+       contents: prompt,
+    });
+
+    for await (const chunk of response) {
+      yield chunk.text;
+    }
+  } catch (error) {
+     console.error("Error calling Gemini API:", error);
+     throw new Error("The AI analysis stream request failed. Please check your API key and network connection.");
   }
 }
